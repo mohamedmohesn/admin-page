@@ -1,0 +1,44 @@
+<%- include('header'); -%>
+
+<div class="details content">
+    <h2>name: <%= blog.name %></h2>
+    <div class="content">
+      <img src="/uploads/<%= blog.imagespecialty %>" alt="<%= blog.name %>"  style="display:inline; max-width: 500px; max-height: 500px;"><br>
+      <h3>specialty: <%= blog.specialty %></h3>
+    </div>
+    <a class="delete" data-doc="<%= blog._id %>">
+      
+      <img src="/trashcan.svg" alt="delete icon">
+    </a>
+    
+  </div>
+<a class="view btn btn-info " id="mo" href="/getDoctor/<%= blog._id %>">view doctor</a>
+  <script>
+    const trashcan = document.querySelector('a.delete');
+    // const viewcan = document.getElementById('mo');
+
+    
+    trashcan.addEventListener('click', (e) => {
+      
+      const endpoint = `/deletespecialty/${trashcan.dataset.doc}`;
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+
+  
+    // viewcan.addEventListener('click',async (e) => {
+    //   const endpoint = `/getDoctor/${viewcan.dataset.doc}`;
+    //   fetch(endpoint, {
+    //     method: 'GET',
+    //   })
+    //   .then(response => response.json())
+    //   .then(data => window.location.href = data.redirect)
+    //   .catch(err => console.log(err))
+    // });
+
+  </script>
+<%- include('footer'); -%>

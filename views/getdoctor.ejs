@@ -1,0 +1,20 @@
+<%- include('header'); -%>
+
+<div class="blogs content">
+    <h2>specialty doctors</h2>
+
+    <% if (users.length > 0) { %>
+      <% users.forEach(blog => { %>
+        <a class="single" href="/doctordetails/<%= blog._id %>">
+          <h3 class="title"><%= blog.email %></h3>
+          <p class="snippet"><%= blog.username %></p>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>There are no doctors to display...</p>
+    <% } %>
+    
+  </div>
+ 
+
+  <%- include('footer'); -%>

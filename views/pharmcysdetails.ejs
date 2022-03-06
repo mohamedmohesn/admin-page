@@ -1,0 +1,30 @@
+<%- include('header'); -%>
+
+<div class="details content">
+    <h2>username: <%= blog.username %></h2>
+    <div class="content">
+        <img src="/uploads/<%= blog.imagepharmcy %>" alt="<%= blog.username %>" style="display:inline; max-width: 500px; max-height: 500px;"><br>
+      <h3>location: <%= blog.location %></h3>
+      <h3>phone: <%= blog.phone %></h3>
+      <h3>describtion: <%= blog.describtion %></h3>
+    </div>
+    <a class="delete" data-doc="<%= blog._id %>">
+      <img src="/trashcan.svg" alt="delete icon">
+    </a>
+  </div>
+
+
+  <script>
+    const trashcan = document.querySelector('a.delete');
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/deletepharmcy/${trashcan.dataset.doc}`;
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+    
+  </script>
+<%- include('footer'); -%>

@@ -1,0 +1,20 @@
+<%- include('header'); -%>
+
+<div class="blogs content">
+    <h2>pharmcy</h2>
+
+    <% if (blogs.length > 0) { %>
+      <% blogs.forEach(blog => { %>
+        <a class="single" href="/pharmcydetails/<%= blog._id %>">
+          <h3 class="title"><%= blog.username %></h3>
+          <p class="snippet"><%= blog.phone %></p>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>There are no pharmcy to display...</p>
+    <% } %>
+    
+  </div>
+  <a href="/viewpharmcys" class=" btn btn-info"><img src="/book-medical-solid.svg" width="30px" height="30px">createpharmcy</a>
+
+  <%- include('footer'); -%>

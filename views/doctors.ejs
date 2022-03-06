@@ -1,0 +1,21 @@
+<%- include('header'); -%>
+
+<div class="blogs content">
+    <h2>doctors</h2>
+
+    <% if (blogs.length > 0) { %>
+      <% blogs.forEach(blog => { %>
+        <a class="single" href="/doctordetails/<%= blog._id %>">
+          <h3 class="title"><%= blog.email %></h3>
+          <p class="snippet"><%= blog.username %></p>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>There are no doctors to display...</p>
+    <% } %>
+    
+  </div>
+  <a href="/viewdoctors" class=" btn btn-info"><img src="/book-medical-solid.svg" width="30px" height="30px">create</a>
+
+<a href="/getnameDoctor" class=" btn btn-info"><img src="/book-medical-solid.svg" width="30px" height="30px">accept doctor</a>
+  <%- include('footer'); -%>

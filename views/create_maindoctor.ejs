@@ -1,0 +1,37 @@
+<%- include('header'); -%>
+
+<form action="/createmainDoctor" method="POST" enctype="multipart/form-data">
+
+    <h2>createMainDoctor</h2>
+    <label for="email">email</label>
+    <input type="email" name="email" required />
+
+    <label for="password">password</label>
+    <input type="password" name="password" required />
+
+    <label for="username">username</label>
+    <input type="text" name="username" required />
+
+    <label for="phone">phone</label>
+    <input type="text" name="phone" required />
+
+    <label for="specialty">specialty</label>
+    <input type="text" name="specialtise" required />
+
+   <label for="fee">fee</label>
+    <input type="text" name="fee" required />
+    
+    <label for="imagedoctor">image</label>
+    <input type="file" name="imagedoctor" />
+
+    <label for="imageSSN">imageSSN</label>
+    <input type="file" name="imageSSN" />
+
+    <h4 for="describtion">describtion</h4>
+    <textarea name="describtion" rows="5" cols="30" ></textarea><br>
+
+    <button>createDoctor</button>
+
+</form>
+
+<%- include('footer'); -%>

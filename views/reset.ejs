@@ -1,0 +1,44 @@
+<%- include('header'); -%>
+
+    <form action="/resetc/:token" method="POST" enctype="application/json">
+
+        <h2>reset</h2>
+        <label for="password">password</label>
+        <input type="text" name="password" required />
+
+
+        <button>apply</button>
+
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        let pame = new URL(window.location);
+        const rest = pame.searchParams.get('te');
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+      
+          // reset errors
+    
+          // get values
+          const password = form.password.value;
+          
+          try {
+            const res = await fetch(`/resetc/${rest}`, { 
+              method: 'POST', 
+              body: JSON.stringify({ password }),
+              headers: {'Content-Type': 'application/json'}
+            });
+            const data = await res.json();
+          
+            
+            location.assign('/');
+            
+      
+          }
+          catch (err) {
+            console.log(err);
+          }
+      
+        });
+      </script>
+    <%- include('footer'); -%>

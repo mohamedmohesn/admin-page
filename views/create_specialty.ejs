@@ -1,0 +1,23 @@
+<%- include('header'); -%>
+
+    <form action="/addspecialty" method="POST" enctype="multipart/form-data">
+
+        <h2>specialty</h2>
+        <label for="name">name</label>
+        <input type="text" name="name" required />
+
+        <label for="specialty">specialty</label>
+        <textarea name="specialty" rows="5" cols="30" ></textarea><br>
+
+        <label for="imagespecialty">image</label>
+        <input type="file" name="imagespecialty" />
+
+        <button>create specialty</button>
+
+    </form>
+
+    <%- include('footer'); -%>
+
+       
+                    
+                   

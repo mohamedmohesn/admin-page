@@ -1,0 +1,28 @@
+<%- include('header'); -%>
+
+    <form action="/createpharmcy" method="POST" enctype="multipart/form-data">
+
+        <h2>pharmcy</h2>
+        <label for="location">name</label>
+        <input type="text" name="username" required />
+
+        <label for="location">location</label>
+        <input type="text" name="location" required />
+
+        <label for="phone">phone</label>
+        <input type="text" name="phone" required />
+
+
+        <h4 for="describtion">describtion</h4>
+    <textarea name="describtion" rows="5" cols="30" ></textarea><br>
+
+        <label for="imagepharmcy">image</label>
+        <input type="file" name="imagepharmcy" />
+
+        <button>create</button>
+
+    </form>
+
+    <%- include('footer'); -%>
+
+       

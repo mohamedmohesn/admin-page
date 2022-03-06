@@ -1,0 +1,10 @@
+<%- include('header'); -%>
+
+<% if (user) { %>
+    <h6 id="holle">Welcome to the admin page <%= user.name %> </h6>
+    
+ <% } else { %> 
+    <h6 id="holle">Welcome to the admin page please login </h6>
+<% } %> 
+
+<%- include('footer'); -%>
