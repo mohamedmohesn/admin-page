@@ -28,7 +28,7 @@ app.use(bodyParser.json());
  
 // database connection
 const port = app.listen(process.env.PORT || 5000)
-const dbURI = 'mongodb+srv://mohamedmohesn:M123456@cluster0.mduad.mongodb.net/client?retryWrites=true&w=majority';
+const dbURI = process.env.KEYURL;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
   .then((result) =>console.log("work on 5000"))
   .catch((err) => console.log(err));
